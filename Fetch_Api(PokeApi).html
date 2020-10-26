@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pokemon.css">
+  <title>Fetch Api PokeApi</title>
+</head>
+<body>
+
+  <h1 class="title" >Fetch Api PokeApi</h1>
+  <button class="btn" id="btn">New battle</button>
+  <div class="pokemonList" id="listaPokemon">
+    <div class="pokemon" id="pokemon-1">
+      <img src="" alt="pokemon">
+      <p class="name"></p>
+    </div>
+
+    <div class="vs">Vs.</div>
+
+    <div class="pokemon" id="pokemon-2">
+      <img src="" alt="pokemon">
+      <p class="name"></p>
+    </div>
+  </div>
+  
+  <script src="consultarpokemon.js"></script>
+  <!-- <script>
+    //como consimir api con fetch...
+    //----------------------------------------------
+    fetch ("https://pokeapi.co/api/v2/pokemon/5/")
+    .then(function (response) {
+      // console.log(response);
+      response.json()
+      .then((pokemon)=>{
+        console.log(pokemon);
+      });
+    });
+    //------------------------------------------------
+    //reutilizar nuestra api de pokemon 
+    const consultarPokemon = () =>{
+      fetch ("https://pokeapi.co/api/v2/pokemon/5/")
+      
+      .then(function (response) {
+        response.json().then((pokemon)=>{
+          console.log(pokemon);
+        });
+      });
+    }
+
+    consultarPokemon();
+    //------------------------------------------------------
+
+    //para traer datos dinamicos...
+    
+    const consultarDatosDinamiscosPokemon = (id, num) =>{
+      fetch (`https://pokeapi.co/api/v2/pokemon/${id}/`)
+      
+      .then(function (response) {
+        response.json().then((pokemon)=>{
+          crearPokemon(pokemon, num);
+        });
+      });
+    }
+
+    console.log(' consultarDatosDinamiscosPokemon') + consultarDatosDinamiscosPokemon(26);
+  //--------------------------------------------------------------------------------------------
+  //trayendo datos de una api con fetch:
+
+  const consultarPokemones = () =>{
+    let primerId = Math.round( Math.random() * 150);
+    let segundoId = Math.round( Math.random() * 150);
+
+    consultarDatosDinamiscosPokemon(primerId, 1);
+    consultarDatosDinamiscosPokemon(segundoId, 2);
+  }
+
+  
+  function crearPokemon(pokemon, num){
+    //vamos a convertir la data en HTML
+    let item = lista.querySelector(`#pokemon-${num}`);
+    
+    let imagen = item.getElementsByTagName("img")[0];
+    imagen.setAttribute("src", pokemon.sprites.front_default);
+
+    let nombre= item.getElementsByTagName("p")[0];
+    nombre.textContent = pokemon.name;
+  }
+  
+  consultarPokemones();
+  </script> -->
+</body>
+</html>
